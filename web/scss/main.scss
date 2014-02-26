@@ -1,0 +1,28 @@
+@import "compass";
+@import "susy";
+
+$total-columns  : 12;             // a 12-column grid
+$column-width   : 4em;            // each column is 4em wide
+$gutter-width   : 1em;            // 1em gutters between columns
+$grid-padding   : $gutter-width;  // grid-padding equal to gutters
+
+.col3of12 {
+    @include span-columns(3,$total-columns);
+    &.last {
+        @include span-columns(3 omega,$total-columns);
+    }
+}
+
+.col6of12 {
+    @include span-columns(6,$total-columns);
+    &.last {
+        @include span-columns(6 omega,$total-columns);
+    }
+}
+
+.col9of12 {
+    @include span-columns(9,$total-columns);
+    &.last {
+        @include span-columns(9 omega,$total-columns);
+    }
+}

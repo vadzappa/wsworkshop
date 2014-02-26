@@ -1,0 +1,13 @@
+<div>
+    <div class="col6of12">
+        <h2>{{name}}</h2>
+        <img {{bind-attr src="avatarUrl"}} />
+    </div>
+    <div class="col6of12 last">
+        <ul>
+            {{#each house in houses}}
+                <li>{{house.name}}</li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
