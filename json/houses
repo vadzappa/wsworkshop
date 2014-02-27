@@ -3,14 +3,20 @@
         {
             "id": 3,
             "name": "First property",
-            "location": "Minsk",
-            "area": "200sqm"
+            "location": "Tallinn",
+            "area": "300sqm"
         },
         {
             "id": 2,
             "name": "Second property",
-            "location": "Minsk",
+            "location": "Tallinn",
             "area": "200sqm"
+        },
+        {
+            "id": 1,
+            "name": "Third property",
+            "location": "Tallinn",
+            "area": "100sqm"
         }
     ]
 }

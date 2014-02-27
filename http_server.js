@@ -7,8 +7,11 @@ var express = require('express'),
     http = require("http"),
     path = require("path"),
     workingFolder = path.join(__dirname, '/web'),
-    dynamicDataAdapter = require('./dynamicDataAdapter'),
-    _ = require('lodash');
+    _ = require('lodash'),
+    JsonResponderFeature = require('./backend/jsonResponderFeature'),
+    jsonResponderFeature = new JsonResponderFeature(path.join(__dirname, '/json'), '/json/');
+
+
 
 // simple logger
 app.use(function (req, res, next) {
@@ -22,7 +25,7 @@ app.use(function (req, res, next) {
         res.sendfile(path.join(workingFolder, '/index.html'));
     } else if (req.path.indexOf('/json/') === 0) {
         setTimeout(function () {
-            res.send(dynamicDataAdapter.getResourceByName(_.last(req.path.split('/json/'))));
+            jsonResponderFeature.processRequest(req, res);
         }, 1000);
     } else {
         res.sendfile(path.join(workingFolder, req.path));
